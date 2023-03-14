@@ -1,10 +1,15 @@
 import './css/styles.css';
+import getRefs from './js/getRefs';
 
-const DEBOUNCE_DELAY = 300;
+const refs = getRefs();
+
+// refs.DEBOUNCE_DELAY
 
 // fetchCountries();
 
-const test = fetch('https://restcountries.com/v3.1/name/deutschland')
+const test = fetch(
+  'https://restcountries.com/v3.1/all?fields=name,capital,population,flags,languages '
+)
   .then(response => {
     return response.json();
   })
@@ -15,14 +20,3 @@ const test = fetch('https://restcountries.com/v3.1/name/deutschland')
     console.log(error);
   });
 // -------------------------------------------------------
-<div class="country">
-  <div class="country-img">
-    <img src="{{flags.svg}}" alt="{{name}}">
-  </div>
-  <div class="card">
-    <h2 class="card-title">Имя: {{name.official}}</h2>
-    <p class="card-text">Capital: {{capital}}</p>
-    <p class="card-text">Population: {{population}}</p>
-    <p class="card-text">Languages: {{languages }}</p>
-  </div>
-</div>
