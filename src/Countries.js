@@ -20,7 +20,7 @@ refs.inputFind.addEventListener(
 );
 
 function onInputCountry() {
-  clear();
+  clearForm();
   const countryFindName = refs.inputFind.value;
   if (countryFindName.trim() === '') {
     makeMessage('failure', refs.emptyName);
@@ -69,13 +69,16 @@ function countryCardTemplate(country) {
         population,
         languages,
       }) => {
-        return `<li class="card-item">
+        return `
+        <li class="card-item">
             <p class="card-position">
             <img src=${svg} width=200px alt=flag class="card-flag"><br>
             ${official}</p>
-            <p class="card-cap">Capital: ${capital}</p>
-            <p class="card-other">population: ${population}</p>
-            <p class="card-other">languages: ${Object.values(languages)}</p>
+            <p class="card-cap"><strong>Capital:</strong> ${capital}</p>
+            <p class="card-other"><strong>Population:</strong> ${population}</p>
+            <p class="card-other"><strong>Languages:</strong> ${Object.values(
+              languages
+            )}</p>
         </li>`;
       }
     )
@@ -83,7 +86,7 @@ function countryCardTemplate(country) {
   refs.countryInfo.innerHTML = markup;
 }
 
-function clear() {
+function clearForm() {
   refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
 }

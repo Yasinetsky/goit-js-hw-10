@@ -18,3 +18,16 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+li {
+  list-style: none;
+}
+
+.card-position {
+  font-size: 40px;
+}
+
+.card-cap,
+.card-other {
+  font-style: italic;
+}
