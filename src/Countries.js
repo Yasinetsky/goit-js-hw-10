@@ -9,9 +9,9 @@ const refs = {
   countryInfo: document.querySelector('.country-info'),
 
   manyMessage: 'Too many matches found. Please enter a more specific name.',
-  opsMessage: 'Oops, there is no country with that name, buy the globe',
+  errorMessage: 'Oops, there is no country with that name, buy the globe',
   foundContry: 'We found country',
-  emptyName: 'Empty field, input country name',
+  emptyField: 'Empty field, input country name',
 };
 
 refs.inputFind.addEventListener(
@@ -23,7 +23,7 @@ function onInputCountry() {
   clearForm();
   const countryFindName = refs.inputFind.value;
   if (countryFindName.trim() === '') {
-    makeMessage('failure', refs.emptyName);
+    makeMessage('failure', refs.emptyField);
     return;
   }
 
@@ -42,7 +42,7 @@ function onInputCountry() {
       makeMessage('warning', refs.manyMessage);
     })
     .catch(error => {
-      makeMessage('failure', refs.opsMessage);
+      makeMessage('failure', refs.errorMessage);
     });
 }
 
