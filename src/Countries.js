@@ -10,7 +10,6 @@ const refs = {
 
   manyMessage: 'Too many matches found. Please enter a more specific name.',
   errorMessage: 'Oops, there is no country with that name, buy the globe',
-  foundContry: 'We found country',
   emptyField: 'Empty field, input country name',
 };
 
@@ -31,7 +30,6 @@ function onInputCountry() {
     .then(countries => {
       if (countries.length === 1) {
         countryCardTemplate(countries);
-        makeMessage('success', refs.foundContry);
         return;
       }
       if (countries.length >= 2 && countries.length <= 10) {
