@@ -23,11 +23,11 @@ li {
   list-style: none;
 }
 
-.card-position {
+.card-info {
   font-size: 30px;
 }
 
-.card-cap,
-.card-other {
+.card-capital,
+.card-data {
   font-style: italic;
 }

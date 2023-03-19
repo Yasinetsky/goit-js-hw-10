@@ -69,12 +69,12 @@ function countryCardTemplate(country) {
       }) => {
         return `
         <li class="card-item">
-            <p class="card-position">
+            <p class="card-info">
             <img src=${svg} width=200px alt=flag class="card-flag"><br>
             ${official}</p>
-            <p class="card-cap"><strong>Capital:</strong> ${capital}</p>
-            <p class="card-other"><strong>Population:</strong> ${population}</p>
-            <p class="card-other"><strong>Languages:</strong> ${Object.values(
+            <p class="card-capital"><strong>Capital:</strong> ${capital}</p>
+            <p class="card-data"><strong>Population:</strong> ${population}</p>
+            <p class="card-data"><strong>Languages:</strong> ${Object.values(
               languages
             )}</p>
         </li>`;
